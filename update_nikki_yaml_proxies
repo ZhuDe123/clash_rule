@@ -3,13 +3,13 @@
 # 将机场官方订阅中的节点proxies提取出来，添加到模板文件中，生成可以使用的nikki配置文件
 
 # 机场官方订阅链接
-url=""
+url="https://webget.yfjc.xyz/api/v1/client/subscribe?token=42577b03b60383435d102578a6d6bf8f"
 # 官方配置文件
-online_yaml="yifenjichang_online.yaml"
+online_yaml="/etc/nikki/profiles/yifenjichang_online.yaml"
 # 模板文件
 template_yaml="yifenjichang-template.yaml"
 # 生成的文件
-target_yaml="yifenjichang.yaml"
+target_yaml="/etc/nikki/profiles/yifenjichang.yaml"
 # 临时文件
 temp_yaml="yifenjichang_temp.yaml"
 
@@ -78,6 +78,21 @@ rm -f /tmp/proxies.tmp
 # 将临时文件转为目标文件
 rm -rf $target_yaml
 mv $temp_yaml $target_yaml
+
+
+# 更新geo数据库
+rm -rf /etc/nikki/run/geoip.dat
+curl -o geoip.dat https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat
+mv geoip.dat /etc/nikki/run/
+# geosite
+rm -rf /etc/nikki/run/geosite.dat
+curl -o /etc/nikki/run/geosite.dat https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat
+# mmdb
+rm -rf /etc/nikki/run/country.mmdb
+curl -o /etc/nikki/run/country.mmdb https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country.mmdb
+# asn
+rm -rf /etc/nikki/run/GeoLite2-ASN.mmdb
+curl -o /etc/nikki/run/GeoLite2-ASN.mmdb https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/GeoLite2-ASN.mmdb
 
 # 重启nikki服务
 /etc/init.d/nikki restart
