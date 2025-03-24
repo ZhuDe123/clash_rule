@@ -7,7 +7,7 @@ url=""
 # 官方配置文件
 online_yaml="/etc/nikki/profiles/yifenjichang_online.yaml"
 # 模板文件
-template_yaml="yifenjichang-template.yaml"
+template_yaml="/root/sh/nikki/yifenjichang-template.yaml"
 # 生成的文件
 target_yaml="/etc/nikki/profiles/yifenjichang.yaml"
 # 临时文件
