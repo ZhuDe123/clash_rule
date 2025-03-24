@@ -3,7 +3,7 @@
 # 将机场官方订阅中的节点proxies提取出来，添加到模板文件中，生成可以使用的nikki配置文件
 
 # 机场官方订阅链接
-url="https://webget.yfjc.xyz/api/v1/client/subscribe?token=42577b03b60383435d102578a6d6bf8f"
+url=""
 # 官方配置文件
 online_yaml="/etc/nikki/profiles/yifenjichang_online.yaml"
 # 模板文件
