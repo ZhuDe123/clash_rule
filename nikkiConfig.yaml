@@ -1,8 +1,8 @@
 # 注意规则在满足自己需求情况下，尽量做到精简，不要过度复杂，以免影响性能。
 # 机场订阅
 proxy-providers:
-  Airport1:
-    url: "机场订阅连接"
+  ArePort1:
+    url: ""
     type: http
     interval: 86400
     health-check:
@@ -17,13 +17,14 @@ proxy-providers:
       - "Clash.meta"
     override: # 覆写节点加载时的一些配置项
       #skip-cert-verify: true
-      #udp: true
+	  #udp: true
   
 
 # 节点信息
 proxies:
   - {name: 直连, type: direct, udp: true}
   - {name: 拒绝连接, type: reject, udp: true}
+
 
 # 全局配置 
 port: 7890
@@ -137,6 +138,7 @@ proxy-groups:
   
   - {name: 💡 jetbrains, <<: *pr}
   - {name: 🎮 游戏平台, <<: *pr}
+  - {name: 🛑 广告拦截, type: select, proxies: [拒绝连接, 直连, 🚀 默认代理]}
   
   - {name: 🎵 TikTok, <<: *pr}
   - {name: 📲 Telegram, <<: *pr}
@@ -164,8 +166,17 @@ proxy-groups:
 rules:
   - DOMAIN-SUFFIX,qichiyu.com,🚀 默认代理
   - RULE-SET,private_domain,直连
-  - RULE-SET,apple_domain,🍎 Apple
   - RULE-SET,proxylite,🚀 默认代理
+  
+  # 广告拦截
+  - RULE-SET,ads_domain,🛑 广告拦截
+  - RULE-SET,ads_list1,🛑 广告拦截
+  - RULE-SET,ads_list2,🛑 广告拦截
+  - RULE-SET,ads_list3,🛑 广告拦截
+  - RULE-SET,ads_list4,🛑 广告拦截
+  - RULE-SET,ads_list5,🛑 广告拦截
+  
+  - RULE-SET,apple_domain,🍎 Apple
   - RULE-SET,ai,🤖 ChatGPT
   - RULE-SET,github_domain,👨🏿‍💻 GitHub
   
@@ -213,6 +224,13 @@ rule-providers:
   origin_domain: { <<: *domain, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/origin.mrs"}
   sony_domain: { <<: *domain, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/sony.mrs"}
   steam_domain: { <<: *domain, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/steam.mrs"}
+  # 广告拦截
+  ads_domain: { <<: *domain, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ads-all.mrs"}
+  ads_list1: { <<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list"}
+  ads_list2: { <<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list"}
+  ads_list3: { <<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyList.list"}
+  ads_list4: { <<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyListChina.list"}
+  ads_list5: { <<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyPrivacy.list"}
   
   apple_domain: { <<: *domain, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple-cn.mrs"}
   speedtest_domain: { <<: *domain, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/ookla-speedtest.mrs"}
