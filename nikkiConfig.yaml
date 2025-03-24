@@ -171,11 +171,11 @@ rules:
   
   # 广告拦截
   - RULE-SET,ads_domain,🛑 广告拦截
-  - RULE-SET,ads_list1,🛑 广告拦截
-  - RULE-SET,ads_list2,🛑 广告拦截
-  - RULE-SET,ads_list3,🛑 广告拦截
-  - RULE-SET,ads_list4,🛑 广告拦截
-  - RULE-SET,ads_list5,🛑 广告拦截
+  # - RULE-SET,ads_list1,🛑 广告拦截
+  # - RULE-SET,ads_list2,🛑 广告拦截
+  # - RULE-SET,ads_list3,🛑 广告拦截
+  # - RULE-SET,ads_list4,🛑 广告拦截
+  # - RULE-SET,ads_list5,🛑 广告拦截
   
   - RULE-SET,apple_domain,🍎 Apple
   - RULE-SET,ai,🤖 ChatGPT
@@ -230,11 +230,11 @@ rule-providers:
   steam_domain: { <<: *domain, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/steam.mrs"}
   # 广告拦截
   ads_domain: { <<: *domain, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ads-all.mrs"}
-  ads_list1: { <<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list"}
-  ads_list2: { <<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list"}
-  ads_list3: { <<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyList.list"}
-  ads_list4: { <<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyListChina.list"}
-  ads_list5: { <<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyPrivacy.list"}
+  # ads_list1: { <<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list"}
+  # ads_list2: { <<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list"}
+  # ads_list3: { <<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyList.list"}
+  # ads_list4: { <<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyListChina.list"}
+  # ads_list5: { <<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyPrivacy.list"}
   # 检测
   check_list: { <<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/liandu2024/clash/refs/heads/main/list/Check.list"}
   
