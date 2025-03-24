@@ -17,7 +17,7 @@ proxy-providers:
       - "Clash.meta"
     override: # 覆写节点加载时的一些配置项
       #skip-cert-verify: true
-	  #udp: true
+      #udp: true
   
 
 # 节点信息
@@ -94,6 +94,8 @@ tun:
   auto-redirect: true
   auto-detect-interface: true
 
+
+
 # DNS模块
 dns:
   enable: true
@@ -115,6 +117,10 @@ dns:
     - "+.cn.ntp.org.cn"
     # 自己的域名不走代理
     - "+.zdsfurong.top"
+    - "+.lan"
+    - "+.local"
+    - "geosite:cn"
+    - "geosite:private"
   default-nameserver:
     - 223.5.5.5
   proxy-server-nameserver:
