@@ -145,7 +145,7 @@ proxy-groups:
   - {name: ⏱️ 检测, <<: *pr}
   - {name: 💡 jetbrains, <<: *pr}
   - {name: 🎮 游戏平台, <<: *pr}
-  - {name: 🛑 广告拦截, type: select, proxies: [拒绝连接, 直连, 🚀 默认代理]}
+  # - {name: 🛑 广告拦截, type: select, proxies: [拒绝连接, 直连, 🚀 默认代理]}
   
   - {name: 🎵 TikTok, <<: *pr}
   - {name: 📲 Telegram, <<: *pr}
@@ -176,7 +176,7 @@ rules:
   - RULE-SET,proxylite,🚀 默认代理
   
   # 广告拦截
-  - RULE-SET,ads_domain,🛑 广告拦截
+  # - RULE-SET,ads_domain,🛑 广告拦截
   # - RULE-SET,ads_list1,🛑 广告拦截
   # - RULE-SET,ads_list2,🛑 广告拦截
   # - RULE-SET,ads_list3,🛑 广告拦截
@@ -235,7 +235,7 @@ rule-providers:
   sony_domain: { <<: *domain, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/sony.mrs"}
   steam_domain: { <<: *domain, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/steam.mrs"}
   # 广告拦截
-  ads_domain: { <<: *domain, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ads-all.mrs"}
+  # ads_domain: { <<: *domain, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ads-all.mrs"}
   # ads_list1: { <<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list"}
   # ads_list2: { <<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list"}
   # ads_list3: { <<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyList.list"}
