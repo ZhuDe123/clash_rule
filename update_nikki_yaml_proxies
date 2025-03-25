@@ -3,11 +3,13 @@
 # 将机场官方订阅中的节点proxies提取出来，添加到模板文件中，生成可以使用的nikki配置文件
 
 # 机场官方订阅链接
-url=""
+url="https://webget.yfjc.xyz/api/v1/client/subscribe?token=42577b03b60383435d102578a6d6bf8f"
+# 模板地址
+template_url="https://raw.githubusercontent.com/ZhuDe123/clash_rule/refs/heads/main/nikkiConfig.yaml"
 # 官方配置文件
 online_yaml="/etc/nikki/profiles/yifenjichang_online.yaml"
 # 模板文件
-template_yaml="/root/sh/nikki/yifenjichang-template.yaml"
+template_yaml="yifenjichang-template.yaml"
 # 生成的文件
 target_yaml="/etc/nikki/profiles/yifenjichang.yaml"
 # 临时文件
@@ -16,6 +18,9 @@ temp_yaml="yifenjichang_temp.yaml"
 
 rm -rf $online_yaml
 curl -o $online_yaml --location --request GET $url --header 'User-Agent: Clash.meta' 
+
+rm -rf $template_yaml
+curl -o $template_yaml --location --request GET $template_url
 
 cp -f $template_yaml $temp_yaml
 
@@ -74,6 +79,7 @@ sed -i -e "
 
 # 清理临时文件
 rm -f /tmp/proxies.tmp
+rm -f $template_yaml
 
 # 将临时文件转为目标文件
 rm -rf $target_yaml
