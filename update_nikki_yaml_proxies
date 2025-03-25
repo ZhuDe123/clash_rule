@@ -87,18 +87,18 @@ mv $temp_yaml $target_yaml
 
 
 # 更新geo数据库
-rm -rf /etc/nikki/run/geoip.dat
-curl -o geoip.dat https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat
-mv geoip.dat /etc/nikki/run/
+# rm -rf /etc/nikki/run/geoip.dat
+#curl -o geoip.dat https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat
+#mv geoip.dat /etc/nikki/run/
 # geosite
 rm -rf /etc/nikki/run/geosite.dat
 curl -o /etc/nikki/run/geosite.dat https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat
 # mmdb
-rm -rf /etc/nikki/run/country.mmdb
-curl -o /etc/nikki/run/country.mmdb https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country.mmdb
+#rm -rf /etc/nikki/run/country.mmdb
+#curl -o /etc/nikki/run/country.mmdb https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country.mmdb
 # asn
-rm -rf /etc/nikki/run/GeoLite2-ASN.mmdb
-curl -o /etc/nikki/run/GeoLite2-ASN.mmdb https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/GeoLite2-ASN.mmdb
+#rm -rf /etc/nikki/run/GeoLite2-ASN.mmdb
+#curl -o /etc/nikki/run/GeoLite2-ASN.mmdb https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/GeoLite2-ASN.mmdb
 
 # 重启nikki服务
 /etc/init.d/nikki restart
