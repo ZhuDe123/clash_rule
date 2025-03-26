@@ -119,8 +119,6 @@ dns:
     - "+.zdsfurong.top"
     - "+.lan"
     - "+.local"
-    - "geosite:cn"
-    - "geosite:private"
   default-nameserver:
     - 223.5.5.5
   proxy-server-nameserver:
@@ -143,6 +141,7 @@ proxy-groups:
   - {name: 👨🏿‍💻 GitHub, <<: *pr}
   
   - {name: ⏱️ 检测, <<: *pr}
+  - {name: 📺 BiliBili, type: select, proxies: [直连, 🔯 香港故转, ♻️ 香港自动, 🚀 默认代理]}
   - {name: 💡 jetbrains, <<: *pr}
   - {name: 🎮 游戏平台, <<: *pr}
   # - {name: 🛑 广告拦截, type: select, proxies: [拒绝连接, 直连, 🚀 默认代理]}
@@ -186,6 +185,8 @@ rules:
   - RULE-SET,apple_domain,🍎 Apple
   - RULE-SET,ai,🤖 ChatGPT
   - RULE-SET,github_domain,👨🏿‍💻 GitHub
+  # 哔哩哔哩
+  - RULE-SET,bilibili_domain,📺 BiliBili
   # idea软件插件下载
   - RULE-SET,jetbrains_domain,💡 jetbrains
   # 游戏平台
@@ -226,6 +227,8 @@ rule-providers:
   github_domain: { <<: *domain, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.mrs"}
   telegram_domain: { <<: *domain, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs"}
   netflix_domain: { <<: *domain, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/netflix.mrs"}
+  # 哔哩哔哩
+  bilibili_domain: { <<: *domain, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/bilibili.mrs"}
   # idea软件插件下载
   jetbrains_domain: { <<: *domain, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/jetbrains.mrs"}
   # 游戏平台
