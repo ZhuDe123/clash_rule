@@ -91,8 +91,8 @@ mv $temp_yaml $target_yaml
 #curl -o geoip.dat https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat
 #mv geoip.dat /etc/nikki/run/
 # geosite
-rm -rf /etc/nikki/run/geosite.dat
-curl -o /etc/nikki/run/geosite.dat https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat
+#rm -rf /etc/nikki/run/geosite.dat
+#curl -o /etc/nikki/run/geosite.dat https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat
 # mmdb
 #rm -rf /etc/nikki/run/country.mmdb
 #curl -o /etc/nikki/run/country.mmdb https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country.mmdb
