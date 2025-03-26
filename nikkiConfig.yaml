@@ -187,6 +187,8 @@ rules:
   - RULE-SET,github_domain,👨🏿‍💻 GitHub
   # 哔哩哔哩
   - RULE-SET,bilibili_domain,📺 BiliBili
+  # Microsoft
+  - RULE-SET,microsoft_domain,🪟 Microsoft
   # idea软件插件下载
   - RULE-SET,jetbrains_domain,💡 jetbrains
   # 游戏平台
@@ -229,6 +231,8 @@ rule-providers:
   netflix_domain: { <<: *domain, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/netflix.mrs"}
   # 哔哩哔哩
   bilibili_domain: { <<: *domain, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/bilibili.mrs"}
+  # Microsoft
+  microsoft_domain: { <<: *domain, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft.mrs"}
   # idea软件插件下载
   jetbrains_domain: { <<: *domain, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/jetbrains.mrs"}
   # 游戏平台
