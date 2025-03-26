@@ -142,6 +142,7 @@ proxy-groups:
   
   - {name: ⏱️ 检测, <<: *pr}
   - {name: 📺 BiliBili, type: select, proxies: [直连, 🔯 香港故转, ♻️ 香港自动, 🚀 默认代理]}
+  - {name: 🪟 Microsoft, type: select, proxies: [直连, 🚀 默认代理]}
   - {name: 💡 jetbrains, <<: *pr}
   - {name: 🎮 游戏平台, <<: *pr}
   # - {name: 🛑 广告拦截, type: select, proxies: [拒绝连接, 直连, 🚀 默认代理]}
