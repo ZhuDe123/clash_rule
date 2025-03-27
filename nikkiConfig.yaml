@@ -140,7 +140,6 @@ proxy-groups:
   - {name: 🤖 ChatGPT, <<: *pr}
   - {name: 👨🏿‍💻 GitHub, <<: *pr}
   
-  - {name: ⏱️ 检测, <<: *pr}
   - {name: 📺 BiliBili, type: select, proxies: [直连, 🔯 香港故转, ♻️ 香港自动, 🚀 默认代理]}
   - {name: 🪟 Microsoft, type: select, proxies: [直连, 🚀 默认代理]}
   - {name: 💡 jetbrains, <<: *pr}
@@ -198,8 +197,6 @@ rules:
   - RULE-SET,origin_domain,🎮 游戏平台
   - RULE-SET,sony_domain,🎮 游戏平台
   - RULE-SET,steam_domain,🎮 游戏平台
-  # 检测
-  - RULE-SET,steam_domain,⏱️ 检测
   
   - RULE-SET,youtube_domain,📹 YouTube
   - RULE-SET,google_domain,🍀 Google
@@ -249,8 +246,7 @@ rule-providers:
   # ads_list3: { <<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyList.list"}
   # ads_list4: { <<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyListChina.list"}
   # ads_list5: { <<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyPrivacy.list"}
-  # 检测
-  check_list: { <<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/liandu2024/clash/refs/heads/main/list/Check.list"}
+
   
   apple_domain: { <<: *domain, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple-cn.mrs"}
   speedtest_domain: { <<: *domain, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/ookla-speedtest.mrs"}
