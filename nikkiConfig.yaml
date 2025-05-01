@@ -172,6 +172,7 @@ proxy-groups:
 rules:
   - DOMAIN-SUFFIX,qichiyu.com,🚀 默认代理
   - RULE-SET,private_domain,直连
+  - RULE-SET,Direct_list,直连
   - RULE-SET,proxylite,🚀 默认代理
   
   # 广告拦截
@@ -221,6 +222,7 @@ rule-anchor:
 rule-providers: 
   private_domain: { <<: *domain, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs"}
   proxylite: { <<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/ZhuDe123/clash_rule/refs/heads/main/ProxyLite.list"}
+  Direct_list: { <<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/ZhuDe123/clash_rule/refs/heads/main/Direct.list"}
   ai: {  <<: *domain, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ai-chat-!cn.mrs" }
   youtube_domain: { <<: *domain, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.mrs"}
   google_domain: { <<: *domain, url: "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs"}
