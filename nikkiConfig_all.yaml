@@ -41,6 +41,7 @@ bind-address: "*"
 ipv6: true
 unified-delay: true
 tcp-concurrent: true
+log-level: warning
 # 匹配进程 always/strict/off
 find-process-mode: strict
 global-client-fingerprint: chrome
