@@ -116,6 +116,7 @@ dns:
     - "+.cn.ntp.org.cn"
     # 自己的域名不走代理
     - "+.zdsfurong.top"
+    - "+.zdsfurong.dpdns.org"
     - "+.lan"
     - "+.local"
     - "rule-set:private_domain,cn_domain"
