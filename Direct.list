@@ -8,7 +8,8 @@ DOMAIN-SUFFIX,msftcomecttest.com
 DOMAIN-SUFFIX,dns.msftncsi.com
 DOMAIN-SUFFIX,ipv6.msftconnecttest.com
 DOMAIN-SUFFIX,test-ipv6.com
-
+DOMAIN-SUFFIX,zdsfurong.top
+DOMAIN-SUFFIX,zdsfurong.dpdns.org
 
 # 域名关键字匹配
 DOMAIN-KEYWORD,mirror
