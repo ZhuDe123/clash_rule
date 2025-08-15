@@ -5,7 +5,7 @@
 # 机场官方订阅链接
 url=""
 # 模板地址
-template_url="https://raw.githubusercontent.com/ZhuDe123/clash_rule/refs/heads/main/nikkiConfig_all.yaml"
+template_url="https://gh-proxy.zdsfurong.dpdns.org/https://raw.githubusercontent.com/ZhuDe123/clash_rule/refs/heads/main/nikkiConfig_all.yaml"
 # 官方配置文件
 online_yaml="/etc/nikki/profiles/yifenjichang_online.yaml"
 # 模板文件
@@ -17,7 +17,7 @@ temp_yaml="yifenjichang_temp.yaml"
 
 
 rm -rf $online_yaml
-curl -o $online_yaml --location --request GET $url --header 'User-Agent: Clash.meta' 
+curl -o $online_yaml --location --request GET $url --header 'User-Agent: Clash.meta'
 
 rm -rf $template_yaml
 curl -o $template_yaml --location --request GET $template_url
