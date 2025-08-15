@@ -239,6 +239,7 @@ rules:
   - RULE-SET,proxy_domain,节点选择
   - RULE-SET,ai!cn_domain,AI
   - RULE-SET,ai_domain,AI
+  - RULE-SET,ai_proxy_lite_domain,AI
   - RULE-SET,openai_domain,AI
   - RULE-SET,biliintl_domain,哔哩东南亚
   - RULE-SET,bilibili_domain,哔哩哔哩
@@ -333,6 +334,7 @@ rule-anchor:
 rule-providers:
   private_domain: { <<: *domain, url: "https://gh-proxy.zdsfurong.dpdns.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs" }
   proxylite: { <<: *class, url: "https://gh-proxy.zdsfurong.dpdns.org/raw.githubusercontent.com/ZhuDe123/clash_rule/refs/heads/main/ProxyLite.list" }
+  ai_proxy_lite_domain: { <<: *class, url: "https://gh-proxy.zdsfurong.dpdns.org/raw.githubusercontent.com/ZhuDe123/clash_rule/refs/heads/main/AIProxyLite.list" }
   Direct_list: { <<: *class, url: "https://gh-proxy.zdsfurong.dpdns.org/raw.githubusercontent.com/ZhuDe123/clash_rule/refs/heads/main/Direct.list" }
   bank_cn_domain: { <<: *domain, url: "https://gh-proxy.zdsfurong.dpdns.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/category-bank-cn.mrs" }
   xiaomi_domain: { <<: *domain, url: "https://gh-proxy.zdsfurong.dpdns.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/xiaomi.mrs" }
