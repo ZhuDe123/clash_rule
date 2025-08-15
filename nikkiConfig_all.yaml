@@ -1,9 +1,9 @@
 # 锚点区
-Proxy_first: &Proxy_first {type: select, proxies: [节点选择, 新加坡节点, 香港节点, 日本节点, 台湾节点, 美国节点, 欧洲节点, 全部节点, 自建/家宽节点, 全球直连]}
+Proxy_first: &Proxy_first {type: select, proxies: [节点选择, 新加坡节点, 香港节点, 日本节点, 台湾节点, 美国节点, 欧洲节点, free节点, 全部节点, 自建/家宽节点, 全球直连]}
 
 Direct_first: &Direct_first {type: select, proxies: [全球直连, 节点选择, 新加坡节点, 香港节点, 新加坡节点, 日本节点, 台湾节点, 美国节点, 欧洲节点, 全部节点, 自建/家宽节点]}
 
-Include_all: &Include_all {type: select, proxies: [节点选择, 新加坡节点, 香港节点, 日本节点, 台湾节点, 美国节点, 欧洲节点, 全部节点, 自建/家宽节点, 全球直连], include-all: true, exclude-filter: "(?i)(🟢 直连)"}
+Include_all: &Include_all {type: select, proxies: [节点选择, 新加坡节点, 香港节点, 日本节点, 台湾节点, 美国节点, 欧洲节点, free节点, 全部节点, 自建/家宽节点, 全球直连], include-all: true, exclude-filter: "(?i)(🟢 直连)"}
 
 PProviders: &PProviders {type: http, interval: 86400, health-check: {enable: true, url: 'https://www.apple.com/library/test/success.html', interval: 300}, filter: '^(?!.*(拒绝|直连|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|traffic))'}
 
@@ -30,7 +30,7 @@ proxies:
 # 用于下载订阅时指定UA
 global-ua: clash.meta
 
-# 全局配置 
+# 全局配置
 port: 7890
 socks-port: 7891
 redir-port: 7892
@@ -163,7 +163,7 @@ dns:
 
 # 策略组
 proxy-groups:
-  - {name: 节点选择, type: select, proxies: [新加坡节点, 香港节点, 日本节点, 台湾节点, 美国节点, 欧洲节点, 全部节点, 自建/家宽节点, 故障转移], icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/select.png"}
+  - {name: 节点选择, type: select, proxies: [新加坡节点, 香港节点, 日本节点, 台湾节点, 美国节点, free节点, 欧洲节点, 全部节点, 自建/家宽节点, 故障转移], icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/select.png"}
   # 功能型代理组默认隐藏 start
   - {name: 🔗 代理, type: select, hidden: true, proxies: [节点选择]}
   - {name: 🚫 拒绝, type: select, hidden: true, proxies: [REJECT]}
@@ -207,6 +207,7 @@ proxy-groups:
   - {name: 自建/家宽节点, type: select, include-all: true, filter: "(?i)(自建|CF|The_house|private)", icon: "https://telegraph-image.zdsfurong.dpdns.org/file/AgACAgUAAxkDAAMtaIYCeHFcDF121-tTEApslachJZMAAt_MMRvpGTFUyvX_jv9A04YBAAMCAANtAAM2BA.png"}
   - {name: 香港节点, type: select, proxies: [香港自动, 香港均衡], include-all: true, filter: "(?i)(港|hk|hongkong|Hong Kong)", icon: "https://telegraph-image.zdsfurong.dpdns.org/file/AgACAgUAAxkDAAMuaIYCh1pOM3afROuWeZwgNZssGXoAAuDMMRvpGTFUsLBsR5OQ70YBAAMCAANtAAM2BA.png"}
   - {name: 新加坡节点, type: select, proxies: [新加坡自动, 新加坡均衡], include-all: true, filter: "(?i)(新|🇸🇬|SG|singapore)", icon: "https://telegraph-image.zdsfurong.dpdns.org/file/AgACAgUAAxkDAAMvaIYCm5RVY3Ni5b7max-enHmukicAAuHMMRvpGTFU8iKe9256_kABAAMCAANtAAM2BA.png"}
+  - {name: free节点, type: select, include-all: true, filter: "(?i)(free|Node)", icon: "https://telegraph-image.zdsfurong.dpdns.org/file/AgACAgUAAxkDAAMvaIYCm5RVY3Ni5b7max-enHmukicAAuHMMRvpGTFU8iKe9256_kABAAMCAANtAAM2BA.png"}
   - {name: 日本节点, type: select, proxies: [日本自动, 日本均衡], include-all: true, filter: "(?i)(日本|🇯🇵|JP|Japan)", icon: "https://telegraph-image.zdsfurong.dpdns.org/file/AgACAgUAAxkDAAMwaIYCqQsvIUosY_IN_PeirJuRyR8AAuLMMRvpGTFU8hkiG1c5YJQBAAMCAANtAAM2BA.png"}
   - {name: 台湾节点, type: select, proxies: [台湾自动, 台湾均衡], include-all: true, filter: "(?i)(台|🇹🇼|TW|Taiwan)", icon: "https://telegraph-image.zdsfurong.dpdns.org/file/AgACAgUAAxkDAAMxaIYCuPOsbfbhm7iDB9oQMKMRKYMAAuPMMRvpGTFUj6qqcIZOHq8BAAMCAANtAAM2BA.png"}
   - {name: 美国节点, type: select, proxies: [美国自动, 美国均衡], include-all: true, filter: "(?i)(美|🇺🇲|US|America|United States)" ,exclude-filter: "(?i)(Australia|Russia)", icon: "https://telegraph-image.zdsfurong.dpdns.org/file/AgACAgUAAxkDAAMyaIYCzjElxWQ7vFsAAS55KmGAkMpoAALkzDEb6RkxVBP2Y2ekQ1zGAQADAgADbQADNgQ.png"}
@@ -223,7 +224,7 @@ proxy-groups:
   - {name: 美国均衡, type: load-balance, include-all: true, strategy: consistent-hashing, hidden: true, filter: "(?i)(美|🇺🇲|US|America|united States)" ,exclude-filter: "(?i)(The_US_balance|wcloud|0倍|0\\.1倍|0\\.01倍|0\\.3X|0\\.2x|0\\.5x|3X|2x|1\\.5x|russia|austria|plus|traffic|Australia|rus|aus)", icon: "https://telegraph-image.zdsfurong.dpdns.org/file/AgACAgUAAxkDAAM1aIYDhQq7Bfk4-gKiQ_YMIb6Bv-oAAurMMRvpGTFUW6Yku4ye7FsBAAMCAANtAAM2BA.png"}
   - {name: 故障转移, type: fallback, include-all: true, proxies: [香港节点, 新加坡节点, 日本节点, 台湾节点, 美国节点, 欧洲节点, 自建/家宽节点], interval: 300, exclude-filter: "(?i)(🟢 直连)", icon: "https://telegraph-image.zdsfurong.dpdns.org/file/AgACAgUAAxkDAAM2aIYDqA-Q8syq1FLA4qoEQgzvGSoAAuvMMRvpGTFUPISBgxg6dS0BAAMCAANtAAM2BA.png"}
   - {name: 全部节点, type: select, include-all: true, tolerance: 20, interval: 300, exclude-filter: "(?i)(🟢 直连)", icon: "https://telegraph-image.zdsfurong.dpdns.org/file/AgACAgUAAxkDAAMHaINYEV2uQfcT7IWn9yUTiUkI_BIAAj_FMRs61hlUv_luOcHSnUYBAAMCAANtAAM2BA.png"}
-  - {name: GLOBAL, type: select, include-all: true , proxies: [节点选择, YouTube, TikTok, STEAM, 游戏平台, GitHub, OneDrive, Microsoft, Telegram, 哔哩哔哩, 哔哩东南亚, 巴哈姆特, Spotify, 国内媒体, Google, Meta, AI, Discord, Talkatone, LINE, Signal, NETFLIX, DisneyPlus, HBO, Primevideo, AppleTV, Apple, Emby, Global-TV, Global-Medial, Speedtest, PayPal, Wise, 国外电商, 全球直连, 漏网之鱼, 自建/家宽节点, 香港节点, 新加坡节点, 日本节点, 台湾节点, 美国节点, 欧洲节点, 香港自动, 新加坡自动, 日本自动, 台湾自动, 美国自动, 香港均衡, 新加坡均衡, 日本均衡, 台湾均衡, 美国均衡, 故障转移, 全部节点], exclude-filter: "(?i)(🟢 直连)", icon: "https://telegraph-image.zdsfurong.dpdns.org/file/AgACAgUAAxkDAAM4aIYD2HA8DulQt9K3kNziybRLGpEAAuzMMRvpGTFUMI_oOodcgMoBAAMCAANtAAM2BA.png"}
+  - {name: GLOBAL, type: select, include-all: true , proxies: [节点选择, YouTube, TikTok, STEAM, 游戏平台, GitHub, OneDrive, free节点, Microsoft, Telegram, 哔哩哔哩, 哔哩东南亚, 巴哈姆特, Spotify, 国内媒体, Google, Meta, AI, Discord, Talkatone, LINE, Signal, NETFLIX, DisneyPlus, HBO, Primevideo, AppleTV, Apple, Emby, Global-TV, Global-Medial, Speedtest, PayPal, Wise, 国外电商, 全球直连, 漏网之鱼, 自建/家宽节点, 香港节点, 新加坡节点, 日本节点, 台湾节点, 美国节点, 欧洲节点, 香港自动, 新加坡自动, 日本自动, 台湾自动, 美国自动, 香港均衡, 新加坡均衡, 日本均衡, 台湾均衡, 美国均衡, 故障转移, 全部节点], exclude-filter: "(?i)(🟢 直连)", icon: "https://telegraph-image.zdsfurong.dpdns.org/file/AgACAgUAAxkDAAM4aIYD2HA8DulQt9K3kNziybRLGpEAAuzMMRvpGTFUMI_oOodcgMoBAAMCAANtAAM2BA.png"}
 rules:
   - DOMAIN-SUFFIX,qichiyu.com,节点选择
   - RULE-SET,private_domain,全球直连
