@@ -252,7 +252,6 @@ rules:
   - RULE-SET,github_domain,GitHub
   - RULE-SET,gitbook_domain,GitHub
   - RULE-SET,jetbrains_domain,GitHub
-  - RULE-SET,huggingface_domain,GitHub
   - RULE-SET,youtube_domain,YouTube
   - RULE-SET,google_domain,Google
   - RULE-SET,google_asn_cn,Google,no-resolve
@@ -349,7 +348,6 @@ rule-providers:
   google_domain: { <<: *domain, url: "https://gh-proxy.zdsfurong.dpdns.org/https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/rules/Domain/google.mrs" }
   github_domain: { <<: *domain, url: "https://gh-proxy.zdsfurong.dpdns.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.mrs" }
   jetbrains_domain: { <<: *domain, url: "https://gh-proxy.zdsfurong.dpdns.org/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/jetbrains.mrs"}
-  huggingface_domain: { <<: *domain, url: "https://gh-proxy.zdsfurong.dpdns.org/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/huggingface.mrs"}
   telegram_domain: { <<: *domain, url: "https://gh-proxy.zdsfurong.dpdns.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs" }
   netflix_domain: { <<: *domain, url: "https://gh-proxy.zdsfurong.dpdns.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/netflix.mrs" }
   paypal_domain: { <<: *domain, url: "https://gh-proxy.zdsfurong.dpdns.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/paypal.mrs" }
