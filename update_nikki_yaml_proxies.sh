@@ -17,7 +17,7 @@ template_url="https://gh-proxy.zdsfurong.dpdns.org/https://raw.githubusercontent
 
 # 自定义节点文件路径
 # 假设 my_proxies.yaml 和脚本在同一目录下，如果不在，请提供完整路径，例如：/etc/nikki/my_proxies.yaml
-my_proxies_file="my_proxies.yaml"
+my_proxies_file="/etc/nikki/profiles/my_proxies.yaml"
 
 # -----------------------------------------------------------------------------
 # 文件路径定义 (通常无需修改)
@@ -26,11 +26,11 @@ my_proxies_file="my_proxies.yaml"
 # 官方订阅下载保存路径
 online_yaml="/etc/nikki/profiles/yifenjichang_online.yaml"
 # 模板文件下载保存路径
-template_yaml="yifenjichang-template.yaml"
+template_yaml="/etc/nikki/profiles/yifenjichang-template.yaml"
 # 最终生成的目标配置文件路径
 target_yaml="/etc/nikki/profiles/yifenjichang.yaml"
 # 临时工作文件路径
-temp_yaml="yifenjichang_temp.yaml"
+temp_yaml="/tmp/yifenjichang_temp.yaml"
 
 # 临时代理内容文件
 temp_online_proxies="/tmp/online_proxies.tmp"
