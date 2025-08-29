@@ -13,7 +13,7 @@
 url="" # 请在这里填入你的机场订阅链接
 
 # 模板地址 (Clash.Meta 配置文件模板)
-template_url="https://gh-proxy.zdsfurong.dpdns.org/https://raw.githubusercontent.com/ZhuDe123/clash_rule/refs/heads/main/nikkiConfig_all.yaml"
+template_url="https://gh-proxy.com/https://raw.githubusercontent.com/ZhuDe123/clash_rule/refs/heads/main/nikkiConfig_all.yaml"
 
 # 自定义节点文件路径
 # 假设 my_proxies.yaml 和脚本在同一目录下，如果不在，请提供完整路径，例如：/etc/nikki/my_proxies.yaml
