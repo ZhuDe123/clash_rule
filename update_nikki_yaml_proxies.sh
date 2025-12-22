@@ -14,7 +14,8 @@
 url="" # 请在这里填入你的机场订阅链接
 
 # 模板地址 (Clash.Meta 配置文件模板)
-template_url="https://gh-proxy.com/https://raw.githubusercontent.com/ZhuDe123/clash_rule/refs/heads/main/nikkiConfig_all.yaml"
+template_url="https://gh-proxy.zdsfurong.dpdns.org/https://raw.githubusercontent.com/ZhuDe123/clash_rule/refs/heads/main/nikkiConfig_all.yaml"
+# template_url="https://gh-proxy.com/https://raw.githubusercontent.com/ZhuDe123/clash_rule/refs/heads/main/nikkiConfig_all.yaml"
 
 # 自定义节点文件路径
 # 假设 my_proxies.yaml 和脚本在同一目录下，如果不在，请提供完整路径，例如：/etc/nikki/my_proxies.yaml
@@ -172,16 +173,27 @@ else
   echo "   跳过节点插入，因为没有可用的节点。"
 fi
 
-# 12. 更新 proxy-providers.Airport_01 相关配置
+# 12. 更新 proxy-providers.Airport_01 相关配置（使用yq工具）
 echo "10. 正在更新 proxy-providers.Airport_01 相关配置..."
 
-# 更新 proxy-providers.Airport_01.url
-sed -i "s|^\( *\)url:.*$|\1url: $airport_url|" "$temp_yaml"
-echo "   已更新 proxy-providers.Airport_01.url 为: $airport_url"
+# 检查yq工具是否可用
+if ! command -v yq &> /dev/null; then
+    echo "   错误: yq工具未安装或不可用，请先安装yq"
+    exit 1
+fi
 
-# 更新 proxy-providers.Airport_01.override.additional-prefix
-sed -i "s|^\( *\)additional-prefix:.*$|\1additional-prefix: '$additional_prefix'|" "$temp_yaml"
+# 使用yq更新或创建 proxy-providers.Airport_01 配置
+# yq会自动创建不存在的父节点
+
+# 设置Airport_01的基础配置
+yq -i ".proxy-providers.Airport_01.url = \"$airport_url\"" "$temp_yaml"
+# 设置override配置
+yq -i ".proxy-providers.Airport_01.override.\"additional-prefix\" = \"$additional_prefix\"" "$temp_yaml"
+
+# 输出更新信息
+echo "   已更新 proxy-providers.Airport_01.url 为: $airport_url"
 echo "   已更新 proxy-providers.Airport_01.override.additional-prefix 为: $additional_prefix"
+echo "   Airport_01完整配置已确保存在并更新"
 
 # 13. 清理临时文件
 echo "11. 清理临时文件..."
