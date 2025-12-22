@@ -4,6 +4,7 @@
 # 1. 从机场官方订阅中获取节点，并将其添加到 Clash.Meta (nikki) 配置文件中。
 # 2. 将用户自定义的节点从 my_proxies.yaml 文件中读取，并添加到配置文件中。
 # 3. 生成最终可用的 Clash.Meta 配置文件。
+# 4. 支持自定义配置 proxy-providers.Airport_01 的相关参数。
 
 # -----------------------------------------------------------------------------
 # 配置区
@@ -18,6 +19,10 @@ template_url="https://gh-proxy.com/https://raw.githubusercontent.com/ZhuDe123/cl
 # 自定义节点文件路径
 # 假设 my_proxies.yaml 和脚本在同一目录下，如果不在，请提供完整路径，例如：/etc/nikki/my_proxies.yaml
 my_proxies_file="/etc/nikki/profiles/my_proxies.yaml"
+
+# 新增：可配置的 proxy-providers.Airport_01 参数
+airport_url="www.baidu.com" # proxy-providers.Airport_01.url 配置项
+additional_prefix="cf节点" # proxy-providers.Airport_01.override.additional-prefix 配置项
 
 # -----------------------------------------------------------------------------
 # 文件路径定义 (通常无需修改)
@@ -167,22 +172,33 @@ else
   echo "   跳过节点插入，因为没有可用的节点。"
 fi
 
-# 12. 清理临时文件
-echo "10. 清理临时文件..."
+# 12. 更新 proxy-providers.Airport_01 相关配置
+echo "10. 正在更新 proxy-providers.Airport_01 相关配置..."
+
+# 更新 proxy-providers.Airport_01.url
+sed -i "s|^\( *\)url:.*$|\1url: $airport_url|" "$temp_yaml"
+echo "   已更新 proxy-providers.Airport_01.url 为: $airport_url"
+
+# 更新 proxy-providers.Airport_01.override.additional-prefix
+sed -i "s|^\( *\)additional-prefix:.*$|\1additional-prefix: '$additional_prefix'|" "$temp_yaml"
+echo "   已更新 proxy-providers.Airport_01.override.additional-prefix 为: $additional_prefix"
+
+# 13. 清理临时文件
+echo "11. 清理临时文件..."
 rm -f "$temp_online_proxies"
 rm -f "$temp_my_proxies"
 rm -f "$temp_all_proxies"
 rm -f "$template_yaml"
 echo "    临时文件清理完成。"
 
-# 13. 将临时文件转为目标文件
-echo "11. 移动临时文件到目标位置：$target_yaml"
+# 14. 将临时文件转为目标文件
+echo "12. 移动临时文件到目标位置：$target_yaml"
 rm -f "$target_yaml" # 确保目标文件不存在，避免 mv 报错
 mv "$temp_yaml" "$target_yaml"
 echo "    配置文件生成成功！"
 
-# 14. 更新geo数据库 (如果需要，取消注释)
-# echo "12. 正在更新 Geo 数据库..."
+# 15. 更新geo数据库 (如果需要，取消注释)
+# echo "13. 正在更新 Geo 数据库..."
 # rm -f /etc/nikki/run/geoip.dat
 # curl -o /etc/nikki/run/geoip.dat https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat
 # rm -f /etc/nikki/run/geosite.dat
@@ -193,7 +209,7 @@ echo "    配置文件生成成功！"
 # curl -o /etc/nikki/run/GeoLite2-ASN.mmdb https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/GeoLite2-ASN.mmdb
 # echo "    Geo 数据库更新完成。"
 
-# 15. 重启nikki服务
+# 16. 重启nikki服务
 echo "13. 正在重启 nikki 服务..."
 /etc/init.d/nikki restart
 echo "    nikki 服务重启完成。"
