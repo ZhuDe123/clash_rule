@@ -1,9 +1,9 @@
 # 锚点区
-Proxy_first: &Proxy_first {type: select, proxies: [节点选择, 新加坡节点, 香港节点, 日本节点, 台湾节点, 美国节点, 欧洲节点, free节点, 全部节点, 自建/家宽节点, 全球直连]}
+Proxy_first: &Proxy_first {type: select, proxies: [节点选择, 新加坡节点, 香港节点, 日本节点, 台湾节点, 美国节点, 欧洲节点, free节点, cf节点, 全部节点, 自建/家宽节点, 全球直连]}
 
 Direct_first: &Direct_first {type: select, proxies: [全球直连, 节点选择, 新加坡节点, 香港节点, 新加坡节点, 日本节点, 台湾节点, 美国节点, 欧洲节点, 全部节点, 自建/家宽节点]}
 
-Include_all: &Include_all {type: select, proxies: [节点选择, 新加坡节点, 香港节点, 日本节点, 台湾节点, 美国节点, 欧洲节点, free节点, 全部节点, 自建/家宽节点, 全球直连], include-all: true, exclude-filter: "(?i)(🟢 直连)"}
+Include_all: &Include_all {type: select, proxies: [节点选择, 新加坡节点, 香港节点, 日本节点, 台湾节点, 美国节点, 欧洲节点, free节点, cf节点, 全部节点, 自建/家宽节点, 全球直连], include-all: true, exclude-filter: "(?i)(🟢 直连)"}
 
 PProviders: &PProviders {type: http, interval: 86400, health-check: {enable: true, url: 'https://www.apple.com/library/test/success.html', interval: 300}, filter: '^(?!.*(拒绝|直连|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|traffic))'}
 
@@ -208,6 +208,7 @@ proxy-groups:
   - {name: 香港节点, type: select, proxies: [香港自动, 香港均衡], include-all: true, filter: "(?i)(港|hk|hongkong|Hong Kong)", icon: "https://telegraph-image.zdsfurong.dpdns.org/file/AgACAgUAAxkDAAMuaIYCh1pOM3afROuWeZwgNZssGXoAAuDMMRvpGTFUsLBsR5OQ70YBAAMCAANtAAM2BA.png"}
   - {name: 新加坡节点, type: select, proxies: [新加坡自动, 新加坡均衡], include-all: true, filter: "(?i)(新|🇸🇬|SG|singapore)", icon: "https://telegraph-image.zdsfurong.dpdns.org/file/AgACAgUAAxkDAAMvaIYCm5RVY3Ni5b7max-enHmukicAAuHMMRvpGTFU8iKe9256_kABAAMCAANtAAM2BA.png"}
   - {name: free节点, type: select, include-all: true, filter: "(?i)(free|Node)", icon: "https://telegraph-image.zdsfurong.dpdns.org/file/AgACAgUAAxkDAAM5aJ77Q27A9b8SFGB9_pH8_DasoX8AAnXGMRvgpvlUOkC5vMZeurwBAAMCAANtAAM2BA.png"}
+  - {name: cf节点, type: select, include-all: true, filter: "(?i)(cf节点)", icon: "https://telegraph-image.zdsfurong.dpdns.org/file/AgACAgUAAxkDAAM5aJ77Q27A9b8SFGB9_pH8_DasoX8AAnXGMRvgpvlUOkC5vMZeurwBAAMCAANtAAM2BA.png"}
   - {name: 日本节点, type: select, proxies: [日本自动, 日本均衡], include-all: true, filter: "(?i)(日本|🇯🇵|JP|Japan)", icon: "https://telegraph-image.zdsfurong.dpdns.org/file/AgACAgUAAxkDAAMwaIYCqQsvIUosY_IN_PeirJuRyR8AAuLMMRvpGTFU8hkiG1c5YJQBAAMCAANtAAM2BA.png"}
   - {name: 台湾节点, type: select, proxies: [台湾自动, 台湾均衡], include-all: true, filter: "(?i)(台|🇹🇼|TW|Taiwan)", icon: "https://telegraph-image.zdsfurong.dpdns.org/file/AgACAgUAAxkDAAMxaIYCuPOsbfbhm7iDB9oQMKMRKYMAAuPMMRvpGTFUj6qqcIZOHq8BAAMCAANtAAM2BA.png"}
   - {name: 美国节点, type: select, proxies: [美国自动, 美国均衡], include-all: true, filter: "(?i)(美|🇺🇲|US|America|United States)" ,exclude-filter: "(?i)(Australia|Russia)", icon: "https://telegraph-image.zdsfurong.dpdns.org/file/AgACAgUAAxkDAAMyaIYCzjElxWQ7vFsAAS55KmGAkMpoAALkzDEb6RkxVBP2Y2ekQ1zGAQADAgADbQADNgQ.png"}
