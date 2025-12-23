@@ -411,7 +411,7 @@ rule-providers:
   iptv_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/rules/Domain/iptv.mrs" }
   ai_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/rules/Domain/ai.mrs" }
   TVB_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/rules/Domain/tvb.mrs" }
-  tubi_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/rules/Domain/tubi.mrs" }
+  tubi_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/tubi.mrs" }
   game_cn_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/category-games%40cn.mrs" }
   fakeip_filter_domain: { <<: *domain, url: "https://gh-proxy.com/https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/rules/Domain/fakeip-filter.mrs" }
 
