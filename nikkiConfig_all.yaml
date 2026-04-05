@@ -124,6 +124,10 @@ dns:
   enable: true
   listen: 0.0.0.0:1053
   ipv6: true
+  # DNS 缓存算法
+  cache-algorithm: arc      # ARC 比 LRU 更高效
+  # DNS 缓存大小
+  cache-max-size: 65536    # 大约 65 MB
   prefer-h3: true # 是否开启 DoH 支持 HTTP/3，将并发尝试
   respect-rules: true
   # 模式切换 redir-host / fake-ip
