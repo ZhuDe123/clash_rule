@@ -47,7 +47,9 @@ find-process-mode: strict
 global-client-fingerprint: chrome
 keep-alive-idle: 600
 keep-alive-interval: 15
-
+# 我自己开发的内核的流量统计开关
+ip-stats:
+  enabled: true
 # 策略组选择和fakeip缓存
 profile:
   store-selected: true
