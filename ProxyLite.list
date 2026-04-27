@@ -13,6 +13,10 @@ DOMAIN-SUFFIX,joeyblog.net
 DOMAIN-SUFFIX,hjwzw.com
 DOMAIN-SUFFIX,tinfoil.io
 DOMAIN-SUFFIX,wasmer.app
+DOMAIN-SUFFIX,npm.community
+DOMAIN-SUFFIX,npmjs.com
+DOMAIN-SUFFIX,npmjs.org
+
 
 # 域名关键字匹配
 DOMAIN-KEYWORD,1e100
