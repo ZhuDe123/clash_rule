@@ -61,7 +61,7 @@ authentication:
 skip-auth-prefixes:
   - 127.0.0.1/8
   - ::1/128
-
+  - 192.168.5.0/24  # 加上这一行，局域网 IP 免认证
 # 控制面板
 external-controller: 0.0.0.0:9090
 #  密码设置选项默认无
