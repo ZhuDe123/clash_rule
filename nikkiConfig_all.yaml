@@ -237,6 +237,7 @@ rules:
   - RULE-SET,private_domain,全球直连
   - RULE-SET,Direct_list,全球直连
   - RULE-SET,proxylite,节点选择
+  - RULE-SET,docker_domain,节点选择
   - RULE-SET,wechat_domain,全球直连
   - RULE-SET,wechat_asn,全球直连,no-resolve
   - RULE-SET,speedtest_domain,Speedtest
